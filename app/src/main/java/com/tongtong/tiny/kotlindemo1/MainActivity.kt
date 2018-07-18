@@ -8,6 +8,7 @@ import android.widget.Button
 import com.tongtong.tiny.kotlindemo1.base.BasicSyntaxActivity
 import com.tongtong.tiny.kotlindemo1.base.RequestApiActivity
 import com.tongtong.tiny.kotlindemo1.data.DataActivity
+import com.tongtong.tiny.kotlindemo1.data.ForecastListActivity
 import com.tongtong.tiny.kotlindemo1.recyclerview.RecyclerViewActivity
 import org.jetbrains.anko.find
 
@@ -40,6 +41,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         b4?.setOnClickListener { view ->
             run {
                 val intent = Intent(this, DataActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        val b5: Button? = find(R.id.btn_test5)
+        b5?.setOnClickListener { view ->
+            run {
+                val intent = Intent(this, ForecastListActivity::class.java)
                 startActivity(intent)
             }
         }

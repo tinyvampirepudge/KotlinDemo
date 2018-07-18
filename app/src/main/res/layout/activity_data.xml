@@ -29,6 +29,15 @@
             android:text="映射对象到变量中"
             android:textAllCaps="true"
             />
+
+        <Button
+            android:id="@+id/btn_test3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="转换json到数据层"
+            android:textAllCaps="true"
+            />
     </LinearLayout>
 
 </ScrollView>

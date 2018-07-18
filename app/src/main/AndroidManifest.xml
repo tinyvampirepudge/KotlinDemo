@@ -36,6 +36,10 @@
             android:name=".data.DataActivity"
             android:label="数据类">
         </activity>
+        <activity
+            android:name=".data.ForecastListActivity"
+            android:label="日期列表数据">
+        </activity>
     </application>
 
 </manifest>
