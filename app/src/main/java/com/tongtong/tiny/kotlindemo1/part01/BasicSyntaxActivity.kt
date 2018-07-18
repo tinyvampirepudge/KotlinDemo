@@ -12,11 +12,26 @@ class BasicSyntaxActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_syntax)
+        //基本类型
         basicType1()
         basicType2()
         basicType3()
         basicType4()
         basicType5()
+
+        //bean
+        var person = Person()
+        person.name = "maolegemi"
+        println(person)
+
+        var personKotlin = PersonKotlin()
+        personKotlin.name = "hahahah"
+        println(personKotlin)
+
+        var personKotlinModified = PersonKotlinModified()
+        personKotlinModified.name = "kotlin自定义的bean"
+        personKotlinModified.age = 27
+        println(personKotlinModified)
     }
 
     /*
