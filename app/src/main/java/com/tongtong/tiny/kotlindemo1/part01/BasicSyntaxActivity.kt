@@ -2,12 +2,16 @@ package com.tongtong.tiny.kotlindemo1.part01
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.widget.Button
 import com.tongtong.tiny.kotlindemo1.R
+import com.tongtong.tiny.kotlindemo1.extend.funExtendTest
+import org.jetbrains.anko.find
 
 /**
  * 基本语法
  */
-class BasicSyntaxActivity : AppCompatActivity() {
+class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +36,17 @@ class BasicSyntaxActivity : AppCompatActivity() {
         personKotlinModified.name = "kotlin自定义的bean"
         personKotlinModified.age = 27
         println(personKotlinModified)
+
+        val b1: Button? = find(R.id.btn_test1)
+        b1?.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.btn_test1 -> {
+                funExtendTest("我是扩展Context的方法")
+            }
+        }
     }
 
     /*
@@ -97,4 +112,5 @@ class BasicSyntaxActivity : AppCompatActivity() {
             println(c)
         }
     }
+
 }

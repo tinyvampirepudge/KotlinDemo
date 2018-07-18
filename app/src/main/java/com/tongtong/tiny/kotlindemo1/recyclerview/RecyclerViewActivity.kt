@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.tongtong.tiny.kotlindemo1.R
+import org.jetbrains.anko.find
 
 /**
  * recyclerView
@@ -25,7 +26,9 @@ class RecyclerViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
 
-        var forecastList = findViewById(R.id.forecast_list) as RecyclerView
+//        var forecastList = findViewById(R.id.forecast_list) as RecyclerView
+        //使用 anko 库
+        val forecastList: RecyclerView =find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
         forecastList.adapter = ForecastListAdapter(items)
     }

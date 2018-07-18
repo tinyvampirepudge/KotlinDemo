@@ -22,8 +22,11 @@
             android:name=".part01.BasicSyntaxActivity"
             android:label="基本语法">
         </activity>
-        <activity android:name=".recyclerview.RecyclerViewActivity"
+        <activity
+            android:name=".recyclerview.RecyclerViewActivity"
             android:label="recyclerView">
+        </activity>
+        <activity android:name=".part01.RequestApiActivity">
         </activity>
     </application>
 
