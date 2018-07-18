@@ -10,8 +10,8 @@ import java.util.*
  * @version APP版本号（以修改为准）$version$
  * @date 2018/7/18 17:45
  */
-data class Forecast(val date: Date, val temperature: Float, val details: String) {
+data class ForecastTest(val date: Date, val temperature: Float, val details: String) {
     override fun toString(): String {
-        return "Forecast(date=$date, temperature=$temperature, details='$details')"
+        return "ForecastTest(date=$date, temperature=$temperature, details='$details')"
     }
 }
