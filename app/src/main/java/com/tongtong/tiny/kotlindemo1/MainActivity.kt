@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import com.tongtong.tiny.kotlindemo1.part01.BasicSyntaxActivity
+import com.tongtong.tiny.kotlindemo1.part01.RequestApiActivity
 import com.tongtong.tiny.kotlindemo1.recyclerview.RecyclerViewActivity
+import org.jetbrains.anko.find
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -24,13 +26,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         b2 = findViewById(R.id.btn_test2)
         b1?.setOnClickListener(this)
         b2?.setOnClickListener(this)
+
+        val b3: Button? = find(R.id.btn_test3)
+        b3?.setOnClickListener({
+            run {
+                val intent = Intent(this, RequestApiActivity::class.java)
+                startActivity(intent)
+            }
+        })
     }
 
     /**
      * 覆盖View.OnclickListener接口中的onClick方法。
      */
-    override fun onClick(v: View?){
-        when(v?.id){
+    override fun onClick(v: View?) {
+        when (v?.id) {
             R.id.btn_test1 -> {
                 var intent = Intent(this, BasicSyntaxActivity::class.java)
                 startActivity(intent)
