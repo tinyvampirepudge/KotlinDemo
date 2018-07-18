@@ -1,4 +1,4 @@
-package com.tongtong.tiny.kotlindemo1.part01
+package com.tongtong.tiny.kotlindemo1.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

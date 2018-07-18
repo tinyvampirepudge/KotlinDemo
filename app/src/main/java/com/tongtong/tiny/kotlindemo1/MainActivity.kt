@@ -5,8 +5,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
-import com.tongtong.tiny.kotlindemo1.part01.BasicSyntaxActivity
-import com.tongtong.tiny.kotlindemo1.part01.RequestApiActivity
+import com.tongtong.tiny.kotlindemo1.base.BasicSyntaxActivity
+import com.tongtong.tiny.kotlindemo1.base.RequestApiActivity
+import com.tongtong.tiny.kotlindemo1.data.DataActivity
 import com.tongtong.tiny.kotlindemo1.recyclerview.RecyclerViewActivity
 import org.jetbrains.anko.find
 
@@ -34,6 +35,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
         })
+
+        val b4: Button? = find(R.id.btn_test4)
+        b4?.setOnClickListener { view ->
+            run {
+                val intent = Intent(this, DataActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
     /**

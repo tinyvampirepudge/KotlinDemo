@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".base.RequestApiActivity">
+    tools:context=".data.DataActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,16 +17,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="子线程请求网络数据"
-            android:textAllCaps="false"
+            android:text="复制一个不可变得数据类"
+            android:textAllCaps="true"
             />
 
-        <TextView
-            android:id="@+id/tv1"
+        <Button
+            android:id="@+id/btn_test2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"/>
-
+            android:layout_margin="10dp"
+            android:text="映射对象到变量中"
+            android:textAllCaps="true"
+            />
     </LinearLayout>
 
 </ScrollView>

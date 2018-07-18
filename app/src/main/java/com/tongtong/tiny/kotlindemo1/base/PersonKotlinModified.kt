@@ -1,4 +1,4 @@
-package com.tongtong.tiny.kotlindemo1.part01
+package com.tongtong.tiny.kotlindemo1.base
 
 /**
  * kotlin 书写的person类，这里对name属性，不适用默认的getter和setter，而是修改为自定义

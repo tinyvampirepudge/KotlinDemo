@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".part01.BasicSyntaxActivity"
+            android:name=".base.BasicSyntaxActivity"
             android:label="基本语法">
         </activity>
         <activity
@@ -29,8 +29,12 @@
             android:label="recyclerView">
         </activity>
         <activity
-            android:name=".part01.RequestApiActivity"
+            android:name=".base.RequestApiActivity"
             android:label="请求api数据">
+        </activity>
+        <activity
+            android:name=".data.DataActivity"
+            android:label="数据类">
         </activity>
     </application>
 

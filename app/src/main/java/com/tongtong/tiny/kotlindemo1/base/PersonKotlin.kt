@@ -1,4 +1,4 @@
-package com.tongtong.tiny.kotlindemo1.part01
+package com.tongtong.tiny.kotlindemo1.base
 
 /**
  * kotlin 书写的Person
