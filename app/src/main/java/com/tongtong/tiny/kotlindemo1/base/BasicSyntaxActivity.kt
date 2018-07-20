@@ -39,6 +39,24 @@ class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
 
         val b1: Button? = find(R.id.btn_test1)
         b1?.setOnClickListener(this)
+
+        /**
+         * 字符串模板
+         */
+        var b3 : Button? = find(R.id.btn_test3)
+        b3?.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val i = 10
+                println("i = $i")
+
+                val s = "abc"
+                println("$s.length is ${s.length}")
+
+                val price = "${'$'}9.99"
+                println("price is $price")
+            }
+
+        })
     }
 
     override fun onClick(v: View?) {
