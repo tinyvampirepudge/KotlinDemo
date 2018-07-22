@@ -99,6 +99,27 @@ class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         })
+
+
+        /**
+         * 使用for循环
+         */
+        val b7: Button = find(R.id.btn_test7)
+        b7.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                //第一种方式
+                val items = listOf("apple", "banana", "kiwifruit")
+                for (item in items) {
+                    println(item)
+                }
+                //第二种方式
+                val items1 = listOf("Apple", "Banana", "Kiwifruit")
+                for (index in items1.indices) {
+                    println("item at $index is ${items1[index]}")
+                }
+            }
+
+        })
     }
 
     fun getStringLength1(obj: Any): Int? {
