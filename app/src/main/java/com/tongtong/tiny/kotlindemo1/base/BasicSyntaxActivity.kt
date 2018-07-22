@@ -120,7 +120,48 @@ class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         })
+
+        /**
+         * 使用while循环
+         */
+        var b8: Button = find(R.id.btn_test8)
+        b8.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val items = listOf("while-loop1", "while-loop2", "while-loop3")
+                var index = 0
+                while (index < items.size) {
+                    println("item at $index is ${items[index]}")
+                    index++
+                }
+            }
+
+        })
+
+        /**
+         * 使用when表达式
+         */
+        val b9:Button = find(R.id.btn_test9)
+        b9.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                println(describe(1))
+                println(describe("Hello"))
+                println(describe("hello"))
+                println(describe(123L))
+                println(describe(123))
+                println("阿达")
+            }
+
+        })
     }
+
+    fun describe(obj: Any): String =
+            when (obj) {
+                1 -> "One"
+                "Hello" -> "Greeting"
+                is Long -> "Long"
+                !is String -> "Not a string"
+                else -> "Unknown"
+            }
 
     fun getStringLength1(obj: Any): Int? {
         if (obj is String) {
