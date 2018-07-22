@@ -43,7 +43,7 @@ class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
         /**
          * 字符串模板
          */
-        var b3 : Button? = find(R.id.btn_test3)
+        val b3: Button? = find(R.id.btn_test3)
         b3?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 val i = 10
@@ -57,7 +57,119 @@ class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         })
+
+        /**
+         * if 表达式
+         */
+        val b4: Button? = find(R.id.btn_test4)
+        b4?.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val a = 10
+                val b = 20
+                println("max of $a and $b is ${maxOf1(a, b)}")
+                println("max of $a and $b is ${maxOf1(a, b)}")
+            }
+
+        })
+
+        /**
+         * 使用可空值及null检测
+         */
+        val b5: Button = find(R.id.btn_test5)
+        b5.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                printProduce1("10", "11")
+                printProduce2("100", "10000")
+            }
+
+        })
+
+        /**
+         * 使用类型检测及自动类型转换
+         * is 运算符检测一个表达式是否某类型的一个实例。如果一个不可变的局部变量或属性已经判断出为某类型，
+         * 那么检测后的分支中可以直接当做该elixir使用，无需显式转换
+         */
+        val b6: Button = find(R.id.btn_test6)
+        b6.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val s = "abcdef"
+                println("getStringLength1($s) length is ${getStringLength1(s)}")
+                println("getStringLength2($s) length is ${getStringLength2(s)}")
+                println("getStringLength3($s) length is ${getStringLength3(s)}")
+            }
+
+        })
     }
+
+    fun getStringLength1(obj: Any): Int? {
+        if (obj is String) {
+            //obj 在该条件分支内自动转换成String
+            return obj.length
+        }
+        //在离开类型检测分支后， obj 仍然是 Any 类型
+        return null
+    }
+
+    fun getStringLength2(obj: Any): Int? {
+        if (obj !is String) return null
+        //obj 在这一分支自动转换为String
+        return obj.length
+    }
+
+    fun getStringLength3(obj: Any): Int? {
+        //obj 在 && 右边自动转换成 String 类型
+        if (obj is String && obj.length > 0) {
+            return obj.length
+        }
+        return null
+    }
+
+
+    fun parseInt(str: String): Int? {
+        return str.toInt()
+    }
+
+    fun printProduce1(arg1: String, arg2: String) {
+        val x = parseInt(arg1)
+        var y = parseInt(arg2)
+
+        //字节使用 x*y 会导致编译错误，因为他们可能为null
+//        println(x*y)
+        if (x != null && y != null) {
+            //在空检测后，x 和 y自动转换为非控制（non-nullable）
+            println(x * y)
+        } else {
+            println("either '$arg1' or '$arg2' is not a number")
+        }
+    }
+
+    fun printProduce2(arg1: String, arg2: String) {
+        val x = parseInt(arg1)
+        var y = parseInt(arg2)
+
+        if (x == null) {
+            println("Wrong number format in arg1: '$arg1'")
+            return
+        }
+
+        if (y == null) {
+            println("Wrong number format is arg2: '$arg2'")
+            return
+        }
+
+        //在空检测后，x 和 y会自动转换为非空值
+        println(x * y)
+    }
+
+    fun maxOf1(a: Int, b: Int): Int {
+        if (a > b) {
+            return a
+        } else {
+            return b
+        }
+    }
+
+    fun maxof2(a: Int, b: Int) = if (a > b) a else b
 
     override fun onClick(v: View?) {
         when (v?.id) {

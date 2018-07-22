@@ -38,6 +38,33 @@
             android:textAllCaps="false"
             />
 
+        <Button
+            android:id="@+id/btn_test4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="if 表达式"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btn_test5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="使用可空值及null检测"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btn_test6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="is 使用类型检测及自动类型转换"
+            android:textAllCaps="false"
+            />
+
     </LinearLayout>
 
 </ScrollView>
