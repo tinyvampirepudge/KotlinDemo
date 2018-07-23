@@ -92,6 +92,15 @@
             android:textAllCaps="false"
             />
 
+        <Button
+            android:id="@+id/btn_test10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="区间（range）"
+            android:textAllCaps="false"
+            />
+
     </LinearLayout>
 
 </ScrollView>

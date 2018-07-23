@@ -140,7 +140,7 @@ class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
         /**
          * 使用when表达式
          */
-        val b9:Button = find(R.id.btn_test9)
+        val b9: Button = find(R.id.btn_test9)
         b9.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 println(describe(1))
@@ -152,6 +152,46 @@ class BasicSyntaxActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         })
+
+        /**
+         * 区间 range
+         */
+        val b10:Button = find(R.id.btn_test10)
+        b10.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val x = 10
+                val y = 9
+                //检测某个数字是否在指定区间内
+                if (x in 1..y + 1) {
+                    println("fits in range")
+                }
+
+                //检测某个数字是否在指定区间外
+                val list = listOf("a", "b", "c")
+                if (-1 !in 0..list.lastIndex) {
+                    println("-1 is not of range")
+                }
+                if (list.size !in list.indices) {
+                    println("list size is out of valid list indices range too")
+                }
+
+                //区间迭代
+                for (x in 1..5) {
+                    println("$x is in the range")
+                }
+
+                //数列迭代
+                for (x in 1..10 step 2) {
+                    println(x)
+                }
+                println()
+                for (x in 9 downTo 0 step 3) {
+                    println(x)
+                }
+            }
+
+        })
+
     }
 
     fun describe(obj: Any): String =
